@@ -1,18 +1,16 @@
 public class Truck extends Car{
-    private Trailer trailer;
 
-    public Truck(String modelName, int wheelsCount, Trailer trailer) {
+    public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
-        this.trailer = trailer;
     }
 
     @Override
     public void check() {
         super.check();
-        this.checkTrailer();
+        checkTrailer();
     }
 
     public void checkTrailer() {
-        trailer.check();
+        System.out.println("Проверяем прицеп");
     }
 }

@@ -1,18 +1,19 @@
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-//        final Bicycle b1 = new Bicycle("b1", 2);
-//        final Bicycle b2 = new Bicycle("b2", 2);
-        final Car c2 = new Car("c2", 4);
-//        final Car c1 = new Car("c1", 4);
-        final Truck t1 = new Truck("t1", 8, new SmallTrailer());
-        final Truck t2 = new Truck("t2", 8, new BigTrailer());
-//        final Truck t3 = new Truck("t3", 8, c2);
 
-        final Checkable[] wheeledTransports = {t2, t1, new BigTrailer()};
-        for (Checkable wheeledTransport : wheeledTransports) {
-            wheeledTransport.check();
+        Bicycle b1 = new Bicycle("bicycle1", 2);
+        Bicycle b2 = new Bicycle("bicycle2", 2);
+        Car c1 = new Car("car1", 4);
+        Car c2 = new Car("car2", 4);
+        Truck t1 = new Truck("truck1", 6);
+        Truck t2 = new Truck("truck2", 8);
+
+        ServiceStation station = new ServiceStation();
+
+        WheeledTransport[] wheeledTransport = {b1, b2, c1, c2, t1, t2};
+
+        for (WheeledTransport transport : wheeledTransport) {
+            station.check(transport);
         }
     }
 }
